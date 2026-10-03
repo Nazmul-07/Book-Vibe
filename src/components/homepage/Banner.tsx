@@ -66,7 +66,7 @@ const Banner = () => {
 
           {/* Image */}
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-full max-w-[260px] sm:max-w-[340px] md:max-w-full">
+            <div className="relative w-full max-w-65 sm:max-w-85 md:max-w-full">
               
               {/* Image backdrop */}
               <div className="absolute inset-8 rounded-full bg-emerald-200/50 blur-2xl" />
