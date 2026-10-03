@@ -3,6 +3,8 @@ import Image from "next/image";
 import { IBook } from "@/app/types/book.data";
 import ReadBtn from "@/components/booksDetails/ReadBtn";
 import WishlistBtn from "@/components/booksDetails/WishlistBtn";
+import booksData from "@/data/booksData.json";
+
 
 interface BooksDetailsPageProps {
   params: Promise<{
@@ -10,15 +12,11 @@ interface BooksDetailsPageProps {
   }>;
 }
 
+
 const getBooks = async (): Promise<IBook[]> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch books");
-  }
-
-  return res.json();
+  return booksData as IBook[];
 };
+
 
 const BooksDetailsPage = async ({
   params,

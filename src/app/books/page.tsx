@@ -1,17 +1,9 @@
-
-import BookCard from "@/components/shared/BookCard";
+import booksData from "@/data/booksData.json";
 import { IBook } from "../types/book.data";
-
-
+import BookCard from "@/components/shared/BookCard";
 
 const getBooks = async (): Promise<IBook[]> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch books");
-  }
-
-  return res.json();
+  return booksData as IBook[];
 };
 
 const Books = async () => {
